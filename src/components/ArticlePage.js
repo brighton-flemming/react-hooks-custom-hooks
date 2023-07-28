@@ -20,7 +20,7 @@ function ArticlePage() {
   }, [url]);
 
   // set the document title
-  const pageTitle = post ? `Underreacted | ${post.title}` : "Underreacted";
+  const pageTitle = post ? `Our Final Encounter. | ${post.title}` : "Our Final Encounter.";
   useEffect(() => {
     document.title = pageTitle;
   }, [pageTitle]);

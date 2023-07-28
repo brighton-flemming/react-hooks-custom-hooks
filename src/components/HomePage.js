@@ -8,6 +8,8 @@ function HomePage() {
   const [isLoaded, setIsLoaded] = useState(false);
   const [posts, setPosts] = useState([]);
 
+  useDocumentTitle();
+
   useEffect(() => {
     setIsLoaded(false);
     fetch("http://localhost:4000/posts")

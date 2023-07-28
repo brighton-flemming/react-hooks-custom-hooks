@@ -2,7 +2,7 @@ import { useEffect } from "react";
 
 function useDocumentTitle(pageTitle) {
   useEffect(() => {
-    document.title = "Our Final Encounter | Home";
+    document.title = "Our Final Encounter. | Home";
   }, []);
 }
 
