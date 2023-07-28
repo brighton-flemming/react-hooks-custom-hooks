@@ -5,7 +5,7 @@ function Header() {
   return (
     <header>
       <h1>
-        <Link to="/">Underreacted</Link>
+        <Link to="/">Our Final Encounter.</Link>
       </h1>
     </header>
   );
