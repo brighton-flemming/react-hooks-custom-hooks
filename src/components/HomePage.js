@@ -8,7 +8,7 @@ function HomePage() {
   const [isLoaded, setIsLoaded] = useState(false);
   const [posts, setPosts] = useState([]);
 
-  useDocumentTitle();
+  useDocumentTitle("Our Final Encounter. | Home");
 
   useEffect(() => {
     setIsLoaded(false);

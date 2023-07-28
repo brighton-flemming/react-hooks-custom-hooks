@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { makeEmojiList } from "../utils";
+import useDocumentTitle from "../hooks/useDocumentTitle";
 
 function ArticlePage() {
   // fetch data for a post
@@ -21,9 +22,10 @@ function ArticlePage() {
 
   // set the document title
   const pageTitle = post ? `Our Final Encounter. | ${post.title}` : "Our Final Encounter.";
-  useEffect(() => {
-    document.title = pageTitle;
-  }, [pageTitle]);
+  useDocumentTitle(pageTitle);
+  // useEffect(() => {
+  //   document.title = pageTitle;
+  // }, [pageTitle]);
 
   if (!isLoaded) return <h3>Loading...</h3>;
 
