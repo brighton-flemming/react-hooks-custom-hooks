@@ -6,10 +6,9 @@ import useQuery from "../hooks/useQuery";
 
 function HomePage() {
   
-
-  // const {posts, isLoaded} = useQuery();
-  const [isLoaded, setIsLoaded] = useState(false);
-  const [posts, setPosts] = useState([]);
+const { data: posts, isLoaded} = useQuery(" http://localhost:4000/posts}");
+const [data, setData] = useState(null);
+const [ setIsLoaded] = useState(false);
 
   useDocumentTitle("Our Final Encounter. | Home");
 
@@ -17,16 +16,15 @@ function HomePage() {
     setIsLoaded(false);
     fetch("http://localhost:4000/posts")
       .then((r) => r.json())
-      .then((posts) => {
-        setPosts(posts);
+      .then((data) => {
+        setData(data);
         setIsLoaded(true);
       });
-  }, []);
-
-  // set the document title
-  useEffect(() => {
-    document.title = "Underreacted | Home";
-  }, []);
+  }, [])
+ 
+ 
+ 
+ 
 
   return (
     <>

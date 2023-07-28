@@ -4,12 +4,12 @@ import { makeEmojiList } from "../utils";
 import useDocumentTitle from "../hooks/useDocumentTitle";
 
 function ArticlePage() {
-  // fetch data for a post
   const { id } = useParams();
   const [isLoaded, setIsLoaded] = useState(false);
   const [post, setPost] = useState(null);
 
   const url = `http://localhost:4000/posts/${id}`;
+
   useEffect(() => {
     setIsLoaded(false);
     fetch(url)
@@ -23,9 +23,6 @@ function ArticlePage() {
   // set the document title
   const pageTitle = post ? `Our Final Encounter. | ${post.title}` : "Our Final Encounter.";
   useDocumentTitle(pageTitle);
-  // useEffect(() => {
-  //   document.title = pageTitle;
-  // }, [pageTitle]);
 
   if (!isLoaded) return <h3>Loading...</h3>;
 
