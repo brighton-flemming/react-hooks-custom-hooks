@@ -1,30 +1,21 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect } from "react";
 import About from "./About";
 import ArticleList from "./ArticleList";
 import useDocumentTitle from "../hooks/useDocumentTitle";
 import useQuery from "../hooks/useQuery";
 
 function HomePage() {
-  
-const { data: posts, isLoaded} = useQuery(" http://localhost:4000/posts}");
-const [data, setData] = useState(null);
-const [ setIsLoaded] = useState(false);
+  const { data: posts, isLoaded } = useQuery("http://localhost:4000/posts");
 
   useDocumentTitle("Our Final Encounter. | Home");
 
   useEffect(() => {
-    setIsLoaded(false);
     fetch("http://localhost:4000/posts")
       .then((r) => r.json())
       .then((data) => {
-        setData(data);
-        setIsLoaded(true);
+        // Handle the data if needed, but 'isDataLoaded' is not necessary here.
       });
-  }, [])
- 
- 
- 
- 
+  }, []);
 
   return (
     <>
